@@ -39,7 +39,7 @@ namespace Chapter18Ex10
             array[(lo+hi)/2] = array[lo];
             array[lo] = tmp;
 
-            //Sets pivot and i
+            //Sets pivot and pivot index
             int pivot = array[lo];
             int pivIndex = lo;
             Console.WriteLine("Pivot: {0}", pivot);
@@ -50,7 +50,7 @@ namespace Chapter18Ex10
                 //Determines if the value at index j is less than the pivot
                 if(array[j] < pivot)
                 {
-                    //Increments i and swaps the two values
+                    //Increments pivIndex and swaps the two values
                     pivIndex++;
                     int temp = array[j];
                     array[j] = array[pivIndex];
