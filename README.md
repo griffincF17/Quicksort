@@ -1,2 +1,2 @@
 # Quicksort
-My implentation of the Quicksort algorithm.
+My implementation of the Quicksort algorithm.
