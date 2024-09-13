@@ -20,7 +20,7 @@ int qsort(int a[], int start, int end){
 
     for(int j = start; j < end; j++){	//Iterate through the array, a
 	if(a[j] < pivot){		//Check if the element at index j
-	    int tmp = a[j];		//is greater than the pivot.
+	    int tmp = a[j];		//is less than the pivot.
 	    a[j] = a[i];		//If so, swap that element with
 	    a[i] = tmp;			//the element at position i.
 	    i++;			//Finally, increment i.
