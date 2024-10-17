@@ -10,6 +10,16 @@
 using namespace std;
 
 /*
+ * This function swaps the values of two integer variables.
+ */
+
+void swap(int &n1, int &n2){
+    int tmp = n1;
+    n1 = n2;
+    n2 = tmp;
+}//end swap function
+
+/*
  * This function sorts the array from the designated start point
  * to the designated end point.
  * It returns i, the index number after the last swap.
@@ -21,15 +31,12 @@ int qsort(int a[], int start, int end){
     for(int j = start; j < end; j++){	//Iterate through the array, a
 	if(a[j] < pivot){		//Check if the element at index j
 	    int tmp = a[j];		//is less than the pivot.
-	    a[j] = a[i];		//If so, swap that element with
-	    a[i] = tmp;			//the element at position i.
+	    swap(a[j], a[i]);		//If so, swap a[j] and a[i].	
 	    i++;			//Finally, increment i.
 	}
     }
 
-    int t = a[i];			//Swap the element at position i
-    a[i] = a[end];			//with the end element
-    a[end] = t;
+    swap(a[i], a[end]); 		//Swap the ith and end elements
 
     return i;
 }//end qsort function
@@ -50,6 +57,16 @@ void quicksort(int a[], int start, int end){
     }
 }//end quicksort function
 
+/*
+ * This function prints an array's contents
+ */ 
+void print_array(int a[], int sz){
+    for(int i = 0; i < sz; i++){
+        cout << a[i] << ' ';
+    }
+    cout << endl;
+}
+
 int main(){
     srand(time(0));       
 
@@ -59,20 +76,15 @@ int main(){
 	arr[i] = rand() % 100;
     }
 
-    cout << "Array before quicksort: ";
+    int size = sizeof(arr)/sizeof(int);
 
-    for(int n: arr){
-	cout << n << " ";
-    }
+    cout << "Array before quicksort: ";
+    print_array(arr, size);
     
-    quicksort(arr, 0, (sizeof(arr)/sizeof(int)) - 1);
+    quicksort(arr, 0, size - 1);
 
     cout << "\nArray after quicksort: ";
-
-    for(int n: arr){
-	cout << n << " ";
-    }
-    cout << endl;
+    print_array(arr, size);
 
     return 0;
 }
