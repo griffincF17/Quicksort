@@ -29,8 +29,8 @@ int qsort(int a[], int start, int end){
     int i = start;			//The index number
 
     for(int j = start; j < end; j++){	//Iterate through the array, a
-	if(a[j] < pivot){		//Check if the element at index j
-	    int tmp = a[j];		//is less than the pivot.
+	if(a[j] < pivot){		//Check if the element at index j 				
+					//is less than the pivot.
 	    swap(a[j], a[i]);		//If so, swap a[j] and a[i].	
 	    i++;			//Finally, increment i.
 	}
